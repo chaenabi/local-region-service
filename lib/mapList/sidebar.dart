@@ -57,7 +57,6 @@ class _SideBarState extends State<SideBar> {
     }
     return territory;
   }
-
   PageStorageKey<String> _keepPage() {
     return PageStorageKey<String>('keep-position');
   }

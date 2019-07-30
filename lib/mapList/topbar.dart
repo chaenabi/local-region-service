@@ -22,7 +22,15 @@ class _TopBarState extends State<TopBar> {
           color: Colors.red,
           child: Row(
             children: <Widget>[
-             Text(widget.title),
+              Icon(Icons.add_box),
+              Text(
+                widget.title,
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
         ),

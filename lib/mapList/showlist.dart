@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:mtms/mapList/showListItem.dart';
-import 'package:mtms/model/list.dart';
 import 'package:rxdart/rxdart.dart';
 
 import './topbar.dart';
 
 class ShowList extends StatelessWidget {
   static final topbarTitle = BehaviorSubject<String>();
-
+  
   void dispose() {
     topbarTitle.close();
   }
 
-  Widget _stream() {
+  Widget _streamTopbar() {
     return Container(
       child: StreamBuilder(
           stream: topbarTitle.stream,
@@ -31,10 +30,30 @@ class ShowList extends StatelessWidget {
     );
   }
 
+  Widget _streamList() {
+    return Container(
+      child: StreamBuilder(
+          stream: topbarTitle.stream,
+          initialData: '',
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              print('snapshot has Error : ');
+              print(snapshot.error);
+            } else {
+              if (snapshot.hasData) {
+                return ShowListItem(title: '${snapshot.data}');
+              }
+            }
+            return ShowListItem(title: 'empty lists');
+          }),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      _stream(),
+      _streamTopbar(),
+      _streamList(),
     ]);
   }
 }

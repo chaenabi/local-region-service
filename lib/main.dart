@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './tab_page.dart';
+import 'mapCard/detailMap.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: <String, WidgetBuilder>{
         '/enter': (BuildContext context) => TabPage(),
+        '/map' : (BuildContext context) => DetailMap(), 
         //'/landingpage': (BuildContext context) => MyApp(),
         //'/login': (BuildContext context) => LoginPage(),
         //'/signup': (BuildContext context) => SignupPage(),
