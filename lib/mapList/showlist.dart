@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mtms/mapList/showListItem.dart';
+import 'package:mtms/screens/places_list_screen.dart';
 import 'package:rxdart/rxdart.dart';
 
 import './topbar.dart';
@@ -13,6 +14,7 @@ class ShowList extends StatelessWidget {
 
   Widget _streamTopbar() {
     return Container(
+      width: 320,
       child: StreamBuilder(
           stream: topbarTitle.stream,
           initialData: '',
@@ -51,9 +53,11 @@ class ShowList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
+    return Column(
+      children: <Widget>[
       _streamTopbar(),
       _streamList(),
+      //PlacesListScreen(),
     ]);
   }
 }

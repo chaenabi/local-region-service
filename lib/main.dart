@@ -4,9 +4,10 @@ import './providers/great_places.dart';
 import './screens/places_list_screen.dart';
 import './screens/add_place_screen.dart';
 import './screens/place_detail_screen.dart';
-import './tab_page.dart';
+import './menu/tab_page.dart';
 
 void main() {
+  
   runApp(MyApp());
 }
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.green,
-          primaryColor: Colors.white,
+          primaryColor: Colors.blue,
           accentColor: Colors.black,
         ),
         home: Startup(),
@@ -47,6 +48,7 @@ class Startup extends StatelessWidget {
           onPressed: () => Navigator.of(context).pushReplacementNamed('/enter'),
         ),
       ),
+      
     );
   }
 }

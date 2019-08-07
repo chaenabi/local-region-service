@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtms/screens/add_place_screen.dart';
 
 class TopBar extends StatefulWidget {
   final String title;
@@ -15,14 +16,18 @@ class _TopBarState extends State<TopBar> {
   @override
   Widget build(BuildContext context) {
     return Column(
+
       children: <Widget>[
         Container(
           width: 360,
-          height: 65,
+          height: 45,
           color: Colors.red,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Icon(Icons.add_box),
+              
+              Icon(Icons.settings),
               Text(
                 widget.title,
                 style: TextStyle(
@@ -30,6 +35,12 @@ class _TopBarState extends State<TopBar> {
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
+              ),
+              IconButton(
+                icon: Icon(Icons.add_box),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(AddPlaceScreen.routeName);
+                },
               ),
             ],
           ),

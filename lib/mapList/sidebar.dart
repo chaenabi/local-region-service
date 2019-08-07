@@ -24,13 +24,10 @@ class _SideBarState extends State<SideBar> {
       height: double.infinity,
       child: Column(
         children: <Widget>[
-          Padding(padding: EdgeInsets.all(10.0)),
+          Padding(padding: EdgeInsets.all(5.0)),
           Icon(Icons.build),
-          Padding(padding: EdgeInsets.all(10.0)),
-          Divider(
-            color: Colors.black,
-            height: 0.0,
-          ),
+          Padding(padding: EdgeInsets.all(5.0)),
+         
           Expanded(
             child: Container(
               child: _territories(),
@@ -70,7 +67,6 @@ class _SideBarState extends State<SideBar> {
             title: (territorylist[index]['region'].toString()),
             onTap: () {
               setState(() {
-
                 //리스트 중 아이템 하나만 색깔이 바뀌도록 만드는 for문
                 for (int i = 0; i < territorylist.length; i++) {
                   if (i != index) {
