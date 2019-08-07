@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './mapList/sidebar.dart';
-import './model/list.dart';
+import './models/list.dart';
 import 'mapList/showlist.dart';
 
 class MapPage extends StatefulWidget {

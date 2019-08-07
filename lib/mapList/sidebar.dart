@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mtms/mapList/sidebarListTile.dart';
-import 'package:mtms/model/list.dart';
+import 'package:mtms/models/list.dart';
 import './showlist.dart';
 
 //this is SideBar Widget for just "Printing List"

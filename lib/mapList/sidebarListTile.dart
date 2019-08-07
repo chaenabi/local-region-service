@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/style.dart';
+import '../models/style.dart';
 
 class SideBarListTile extends StatefulWidget {
   final Function onTap;

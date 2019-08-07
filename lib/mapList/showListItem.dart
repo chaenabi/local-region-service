@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/list.dart';
+import '../models/list.dart';
 
 class ShowListItem extends StatefulWidget {
   final String title;
