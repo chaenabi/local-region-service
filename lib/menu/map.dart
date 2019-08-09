@@ -33,11 +33,21 @@ class _MapPageState extends State<MapPage> {
     return SafeArea(
       child: Container(
         //color: Colors.blue,
+        width: double.infinity,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(
-              child: SideBar(territorylist),
+            Flexible(
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: SizedBox(
+                  width: 60,
+                  child: SideBar(territorylist),
+                ),
+              ),
             ),
+
             ShowList(),
             //   Container(
             //       width: 350.0,

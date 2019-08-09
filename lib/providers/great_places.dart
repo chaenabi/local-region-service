@@ -17,10 +17,12 @@ class GreatPlaces with ChangeNotifier {
 
   Future<void> addPlace(
     String pickedTitle,
+    String selectedPlace,
     File pickedImage,
     PlaceLocation pickedLocation,
+    
   ) async {
-    final address = await LocationHelper.getPlacAddress(
+    final address = await LocationHelper.getPlaceAddress(
         pickedLocation.latitude, pickedLocation.latitude);
     final updateLocation = PlaceLocation(
       latitude: pickedLocation.latitude,
@@ -29,6 +31,7 @@ class GreatPlaces with ChangeNotifier {
     );
     final newPlace = Place(
       id: DateTime.now().toString(),
+      territory: selectedPlace,
       image: pickedImage,
       title: pickedTitle,
       location: updateLocation,
@@ -37,6 +40,7 @@ class GreatPlaces with ChangeNotifier {
     notifyListeners();
     DBHelper.insert('places', {
       'id': newPlace.id,
+      'territory':newPlace.territory,
       'title': newPlace.title,
       'image': newPlace.image.path,
       'loc_lat': newPlace.location.latitude,
@@ -45,12 +49,14 @@ class GreatPlaces with ChangeNotifier {
     });
   }
 
+
   Future<void> fetchAndSetPlaces() async {
     final dataList = await DBHelper.getData('places');
     _items = dataList
         .map(
           (item) => Place(
               id: item['id'],
+              territory: item['territory'],
               title: item['title'],
               image: File(item['image']),
               location: PlaceLocation(

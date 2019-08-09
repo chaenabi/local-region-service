@@ -14,12 +14,14 @@ class PlaceLocation {
 
 class Place {
   final String id;
+  final String territory;
   final String title;
   final PlaceLocation location;
   final File image;
 
   Place(
       {@required this.id,
+      @required this.territory,
       @required this.title,
       @required this.location,
       @required this.image});

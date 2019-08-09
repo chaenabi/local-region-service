@@ -19,7 +19,7 @@ class _ShowListItemState extends State<ShowListItem> {
   _buildList() {
     return Expanded(
       child: Container(
-        width: 320,
+        width: 350,
         child: ListView.builder(
           itemBuilder: (context, index) {
             return _buildDoryang(context, index);

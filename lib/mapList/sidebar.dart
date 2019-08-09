@@ -22,6 +22,7 @@ class _SideBarState extends State<SideBar> {
     return Container(
       color: Colors.black54,
       height: double.infinity,
+      
       child: Column(
         children: <Widget>[
           Padding(padding: EdgeInsets.all(5.0)),
@@ -62,7 +63,7 @@ class _SideBarState extends State<SideBar> {
     return Container(
       //decoration: BoxDecoration(color: Colors.green),
       child: Column(
-        children: [
+        children: <Widget>[
           SideBarListTile(
             title: (territorylist[index]['region'].toString()),
             onTap: () {

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "784755609844",
+    "firebase_url": "https://mtms-248409.firebaseio.com",
+    "project_id": "mtms-248409",
+    "storage_bucket": "mtms-248409.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784755609844:android:e25d06fc025c127c",
+        "android_client_info": {
+          "package_name": "com.example.mtms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784755609844-1gl2uggidug1rmprdfu6c1jrhpflsklp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mtms",
+            "certificate_hash": "7b3c18ee1861d351eb72eebab57871a32e3dad17"
+          }
+        },
+        {
+          "client_id": "784755609844-eaq9uvv6849b3bd9tt2bs586h54vfl87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRNBUhsV9w3hGdX6YsVpCUUWU4g9YCKhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784755609844-eaq9uvv6849b3bd9tt2bs586h54vfl87.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

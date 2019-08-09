@@ -19,23 +19,25 @@ class _TopBarState extends State<TopBar> {
 
       children: <Widget>[
         Container(
-          width: 360,
+          width: 355,
           height: 45,
           color: Colors.red,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              
               Icon(Icons.settings),
+
+              Padding(padding: EdgeInsets.only(left: 40, right: 10),),
               Text(
                 widget.title,
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                 ),
-                textAlign: TextAlign.center,
               ),
+
+              Padding(padding: EdgeInsets.only(left: 10, right: 20),),
               IconButton(
                 icon: Icon(Icons.add_box),
                 onPressed: () {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mtms/models/list.dart';
 import 'package:provider/provider.dart';
 import '../widgets/image_input.dart';
 import 'dart:io';
@@ -14,9 +15,10 @@ class AddPlaceScreen extends StatefulWidget {
 
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titleController = TextEditingController();
+  String _territoryName;
+
   File _pickedImage;
   PlaceLocation _pickedLocation;
-
 
   void _selectedImage(File pickedImage) {
     _pickedImage = pickedImage;
@@ -27,11 +29,13 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   }
 
   void _savePlace() {
-    if (_titleController.text.isEmpty || _pickedImage == null || _pickedLocation == null) {
+    if (_titleController.text.isEmpty ||
+        _pickedImage == null ||
+        _pickedLocation == null) {
       return;
     }
-    Provider.of<GreatPlaces>(context)
-        .addPlace(_titleController.text, _pickedImage, _pickedLocation);
+    Provider.of<GreatPlaces>(context).addPlace(
+        _titleController.text, _territoryName, _pickedImage, _pickedLocation);
     Navigator.of(context).pop();
   }
 
@@ -52,6 +56,32 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 padding: EdgeInsets.all(10.0),
                 child: Column(
                   children: <Widget>[
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: DropdownButton<String>(
+                        iconSize: 30,
+                        icon: Icon(Icons.add),
+                        items: <String>[
+                          for (int i = 0; i < territorylist.length; i++)
+                            territorylist[i]['region'].toString(),
+                        ].map((String value) {
+                          return DropdownMenuItem<String>(
+                          
+                            value: value,
+                            child: Text(value),
+                            
+                          );
+                        }).toList(),
+                        onChanged: (value) {
+                          print(value);
+                          setState(() {
+                            _territoryName = value;
+                          });               
+                        },
+                        value: _territoryName,     
+                        hint: Text('선택', style: TextStyle(color: Colors.black),),
+                      ),
+                    ),
                     TextField(
                       decoration: InputDecoration(labelText: 'title'),
                       controller: _titleController,
@@ -60,7 +90,9 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       height: 10,
                     ),
                     ImageInput(_selectedImage),
-                    SizedBox(height: 10.0,),
+                    SizedBox(
+                      height: 10.0,
+                    ),
                     LocationInput(_selectPlace),
                   ],
                 ),
