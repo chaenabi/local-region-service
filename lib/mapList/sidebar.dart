@@ -3,7 +3,7 @@ import 'package:mtms/mapList/sidebarListTile.dart';
 import 'package:mtms/models/list.dart';
 import './showlist.dart';
 
-//this is SideBar Widget for just "Printing List"
+//this is SideBar Widget for just "Build List"
 class SideBar extends StatefulWidget {
   final List<Map<String, Object>> territoryList;
   SideBar(this.territoryList);
@@ -55,6 +55,8 @@ class _SideBarState extends State<SideBar> {
     }
     return territory;
   }
+  
+  //keep list scroll position even when escaping to other page and return the page.
   PageStorageKey<String> _keepPage() {
     return PageStorageKey<String>('keep-position');
   }
@@ -68,7 +70,7 @@ class _SideBarState extends State<SideBar> {
             title: (territorylist[index]['region'].toString()),
             onTap: () {
               setState(() {
-                //리스트 중 아이템 하나만 색깔이 바뀌도록 만드는 for문
+                //FOR command that only selected index changes color blue
                 for (int i = 0; i < territorylist.length; i++) {
                   if (i != index) {
                     territorylist[i]['checked'] = false;

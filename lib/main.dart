@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mtms/loginmenu/loginpage.dart';
 import 'package:provider/provider.dart';
 import './providers/great_places.dart';
 import './screens/places_list_screen.dart';
 import './screens/add_place_screen.dart';
 import './screens/place_detail_screen.dart';
-import './menu/tab_page.dart';
+import './loginmenu/tab_page.dart';
 
 void main() {
   
@@ -40,7 +41,14 @@ class MyApp extends StatelessWidget {
 class Startup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return 
+    //_startup(context);
+    LoginPage();
+  }
+}
+
+Widget _startup(BuildContext context) {
+  return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Center(
         child: FlatButton(
@@ -50,5 +58,4 @@ class Startup extends StatelessWidget {
       ),
       
     );
-  }
 }
