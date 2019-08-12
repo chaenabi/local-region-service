@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class AuthPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _LoginPageState();
+    return _AuthPageState();
   }
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _AuthPageState extends State<AuthPage> {
   final _id = TextEditingController();
   final _pw = TextEditingController();
   bool _checked = false;
+
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -18,10 +19,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //resizeToAvoidBottomInset: true,
-      //resizeToAvoidBottomPadding: false,
-      body: Form(
+    return Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
               child: SingleChildScrollView(
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 2.2,
+                  height: MediaQuery.of(context).size.height / 2.5,
                   padding: EdgeInsets.only(left: 20, top: 33, right: 20),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -253,8 +251,8 @@ class _LoginPageState extends State<LoginPage> {
                             }
                             // 모든 validation 패스시
                             print('button pressed');
-                            print(_id.value.text);
-                            print(_pw.value.text);
+                           // print(_id.value.text);
+                           // print(_pw.value.text);
                           }
                         },
                       ),
@@ -263,9 +261,16 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
+            Padding(padding: EdgeInsets.only(bottom: 12),),
+            FlatButton.icon(
+              icon: Icon(Icons.label),
+              label: Text('회원가입'),
+              onPressed: () {},
+            )
+
           ],
         ),
-      ),
+      
     );
   }
 }
